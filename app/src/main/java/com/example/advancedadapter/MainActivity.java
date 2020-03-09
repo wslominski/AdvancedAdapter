@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
+    private ArrayList<Student> studentList = new ArrayList<>();
 
     Student studentOne = new Student("Wyatt", "Slominski", "CS");
     Student studentTwo = new Student("Logan", "Slominski", "English");
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         studentList.add(studentThree);
         studentList.add(studentFour);
         studentList.add(studentFive);
+
+        StudentAdapter adapter = new StudentAdapter(getApplicationContext(), studentList);
+        listView.setAdapter(adapter);
 
     }
 
